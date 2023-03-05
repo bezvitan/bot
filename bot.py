@@ -1,16 +1,12 @@
+
 import os
-import requests
-import telegram
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from dotenv import load_dotenv
 
-# здесь нужно вставить токен вашего бота
-TOKEN = '5927896952:AAHFiVk7mJnuc4bNz7mVEt_GCthFmvYbrxE'
+load_dotenv()
+TOKEN = os.getenv('TOKEN')
 
-# создаем объект бота
-bot = telegram.Bot(token=TOKEN)
+updater = Updater(TOKEN, use_context=True)
 
-# создаем объект для обновлений
-updater = Updater(token=TOKEN, use_context=True)
 
 # обработка команды /start
 def start(update, context):
