@@ -48,3 +48,4 @@ def news(update, context):
     for article in articles:
         news_text += f"\n{article['title']}\n{article['url']}\n"
     context.bot.send
+git push origin main
